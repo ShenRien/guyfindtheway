@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tusixmode/kyvongtoichanlyonewm.md",
+                "file": "tusixmode/nguoilamthuekhongcanphanxet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "kyvongtoichanlyonewm"
+              "title": "nguoilamthuekhongcanphanxet"
             }
           }
         ]
@@ -171,9 +171,13 @@
   },
   "active": "371d2fdbf0a696b7",
   "lastOpenFiles": [
+    "assets/images/nguoilamthuekhongcanphanxet.png",
+    "about.md",
+    "tusixmode/nguoilamthuekhongcanphanxet.md",
+    "tusixmode/Traisucvat.md",
+    "tusixmode/kyvongtoichanlyonewm.md",
     "assets/images/onewm.png",
     "tusixmode/HeySiri.md",
-    "tusixmode/kyvongtoichanlyonewm.md",
     "articles/vechuongdautien3-bhagavadgita.md",
     "assets/images/noivechuongdautien3.png",
     "assets/images/vechuongdautien3f.png",
@@ -192,7 +196,6 @@
     "assets/images/coixaygio.png",
     "assets/images/default-image.png",
     "assets/images/kimchinam.png",
-    "articles/kimchinam.png",
     "tusixmode/The river.md",
     "tusixmode/Tâm linh vấn ký.md",
     "tusixmode/Quân đội, lính đánh thuê và đồng minh.md",
@@ -203,14 +206,11 @@
     "tusixmode/kimchinam",
     "assets/images/png4A38.tmp",
     "articles/png3E3A.tmp",
-    "about.md",
     "tets template.md",
     "articles/bài viết testing template.md",
     "template/Untitled.md",
     "template",
     "sample-article.md",
-    "markdown.md",
-    "Templates/Defaults posts.md",
     "Templates"
   ]
 }
