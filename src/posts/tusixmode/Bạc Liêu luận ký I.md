@@ -91,3 +91,6 @@ lại *có chiều sâu của ký ức*.
 
 ---
 Theo Akasha
+
+---
+>Shen2H x Scorprien: from ashes
