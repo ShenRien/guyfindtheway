@@ -3,11 +3,11 @@ media:
   output: /posts/assets/images
 content:
   - name: posts
-    label: Posts
-    path: src/posts
+    label: Tusixmode
+    path: src/posts/tusixmode
     type: collection
-content:
-  - name: page
-    label: all page setting
-    path: /
-    type: setting
+    filename: "{primary}.md"
+  - name: posts
+    label: Triết học tinh thần
+    path: src/posts/article
+    type: collection
