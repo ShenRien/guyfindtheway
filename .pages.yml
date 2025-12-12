@@ -20,10 +20,10 @@ content:
         order: desc
     fields:
       - { name: title, label: Title, type: string, required: true}
-      - { name: description, label: Description, type: string, options: {maxlength: 180}}
-      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}}
-      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}}
-      - { name: body, label: Body, type: rich-text}
+      - { name: description, label: Description, type: string, options: {maxlength: 180}, required: true}
+      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}, required: true}
+      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}, required: true}
+      - { name: body, label: Body, type: rich-text, required: true}
       - { name: image, label: Image, type: image}
 
       
@@ -42,10 +42,10 @@ content:
         order: desc
     fields:
       - { name: title, label: Title, type: string, required: true}
-      - { name: description, label: Description, type: string, options: {maxlength: 180}}
-      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}}
-      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}}
-      - { name: body, label: Body, type: rich-text}
+      - { name: description, label: Description, type: string, options: {maxlength: 180}, required: true}
+      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}, required: true}
+      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}, required: true}
+      - { name: body, label: Body, type: rich-text, required: true}
       - { name: image, label: Image, type: image}
 
       
@@ -64,8 +64,8 @@ content:
         order: desc
     fields:
       - { name: title, label: Title, type: string, required: true}
-      - { name: description, label: Description, type: string, options: {maxlength: 180}}
-      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}}
-      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}}
-      - { name: body, label: Body, type: rich-text}
+      - { name: description, label: Description, type: string, options: {maxlength: 180}, required: true}
+      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}, required: true}
+      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}, required: true}
+      - { name: body, label: Body, type: rich-text, required: true}
       - { name: image, label: Image, type: image}
