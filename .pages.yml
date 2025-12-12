@@ -1,11 +1,15 @@
 media:
   input: src/posts/assets/images
   output: /posts/assets/images
+  path: src/posts/assets/images
+
+
 content:
   - name: posts
     label: Posts
     path: src/posts
     type: collection
+    subfolders: false
     filename: "{primary}.md"
     view:
       fields: [ title, date ]
@@ -16,8 +20,52 @@ content:
         order: desc
     fields:
       - { name: title, label: Title, type: string, required: true}
-      - { name: description, label: Description, type: string, options: {maxlength: 180}}
-      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}}
-      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}}
-      - { name: body, label: Body, type: rich-text}
+      - { name: description, label: Description, type: string, options: {maxlength: 180}, required: true}
+      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}, required: true}
+      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}, required: true}
+      - { name: body, label: Body, type: rich-text, required: true}
+      - { name: image, label: Image, type: image}
+
+      
+  - name: tusixmode
+    label: Tusixmode
+    path: src/posts/tusixmode
+    type: collection
+    subfolders: false
+    filename: "{primary}.md"
+    view:
+      fields: [ title, date ]
+      primary: title
+      sort: [ date, title ]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - { name: title, label: Title, type: string, required: true}
+      - { name: description, label: Description, type: string, options: {maxlength: 180}, required: true}
+      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}, required: true}
+      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}, required: true}
+      - { name: body, label: Body, type: rich-text, required: true}
+      - { name: image, label: Image, type: image}
+
+      
+  - name: triethoctinhthan
+    label: Triết học tinh thần
+    path: src/posts/articles
+    type: collection
+    subfolders: false
+    filename: "{primary}.md"
+    view:
+      fields: [ title, date ]
+      primary: title
+      sort: [ date, title ]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - { name: title, label: Title, type: string, required: true}
+      - { name: description, label: Description, type: string, options: {maxlength: 180}, required: true}
+      - { name: date, label: Date, type: date, options: {format: yyyy-MM-dd'T'HH:mm:ss, time: true}, required: true}
+      - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}, required: true}
+      - { name: body, label: Body, type: rich-text, required: true}
       - { name: image, label: Image, type: image}

@@ -1,10 +1,11 @@
 ---
+title: Personal
+description: Tự chất vấn thêm lần nữa xem, mục đích của blog này là gì, mục đích
+  của thực tại là gì
 date: 2025-11-18T19:12:00
 tags:
   - personal
   - tusixmode
-title: Personal
-description: Tự chất vấn thêm lần nữa xem, mục đích của blog này là gì, mục đích của thực tại là gì
 image: /assets/images/personal.png
 ---
 Vì mình bắt đầu lại cảm thấy blog này của mình mất đi tính cá nhân mà mình muốn rồi. Mình đang đứng trước hai thái cực, hoặc là ẩn luôn, hoặc là cứ để như vậy và luân phiên qua lại. Cũng có thể mình đã chia sẻ lên mạng xã hội quá sớm (dù rằng mình chỉ đặt link ngay đó và không để hiển thị lên feed). Mình cần một mức độ cá nhân như thế nào là đủ nhỉ.
@@ -31,12 +32,12 @@ Cảm xúc hay lý trí, chúng chỉ còn là những định nghĩa mơ hồ.
 
 Những thứ đang giam cầm tôi đây này, những thứ tôi cố gắng vùng vẫy, cố gắng thoát ra, cố gắng để kiểm soát trong tuyệt vọng và đau đớn. Nhưng sâu bên trong nó, tôi vẫn rất biết ơn vì nó cho tôi một cảm giác nào đó cố định, cho tôi biết về một thực tại thường hằng bất biến, tôi có thể bị nó chôn vùi, có thể điều khiển nó, có thể bị nó tát thẳng vào mặt, đẩy hết mọi sự khinh bỉ, cười nhạo, ban tới cho tôi ngập tràn thất vọng, đau đớn hoặc có thể bị tôi điều khiển như những sợi dây rối kết nối với những đầu ngón tay. Nhưng dù thế nào, thật may khi nó vẫn còn ở đó, nó bất biến.
 
-Con người, nhìn chung là giống loài yêu sự đau khổ. Vì nó dễ dàng hơn. Dễ dàng hơn việc chấp nhận rằng mọi thứ không có ý nghĩa gì cả, không có giá trị gì cả. Rằng những đau đớn đó đơn giản hơn cơn điên giông bão lũ lượt kéo tới khi phát hiện rằng tất cả mọi thứ không hề tồn tại.
-Nhưng, **Jesus bảo rằng: "Con người không có chỗ tựa đầu"**.*Cái tôi bảo rằng thật vô lễ khi trích dẫn lời của một người đứng đầu một tổ chức khổng lồ đang tồn tại trên thế giới này, như bảo rằng ngươi có thể hiểu biết nhiều hơn chúng* (loài người, ngươi đang nghịch lửa).
+Con người, nhìn chung là giống loài yêu sự đau khổ. Vì nó dễ dàng hơn. Dễ dàng hơn việc chấp nhận rằng mọi thứ không có ý nghĩa gì cả, không có giá trị gì cả. Rằng những đau đớn đó đơn giản hơn cơn điên giông bão lũ lượt kéo tới khi phát hiện rằng tất cả mọi thứ không hề tồn tại. Nhưng, **Jesus bảo rằng: "Con người không có chỗ tựa đầu"**._Cái tôi bảo rằng thật vô lễ khi trích dẫn lời của một người đứng đầu một tổ chức khổng lồ đang tồn tại trên thế giới này, như bảo rằng ngươi có thể hiểu biết nhiều hơn chúng_ (loài người, ngươi đang nghịch lửa).
 
 > Mình đang thấy mình cứ hay dùng giọng điệu miền Bắc để nói chuyện với người Nam, và dùng giọng điệu miền Nam để nói chuyện với người Bắc. Tại sao? trước giờ mình có đi đâu nhiều đâu.
 
----
+* * *
+
 > "
 
 Ngày thứ ba, nó biến mất, không một lời giải thích. Tôi hiểu hôm trước đó đã có những cảm giác đó rồi. Nhưng tôi vẫn nghĩ rằng em chưa muốn dừng lại. Chẳng có thực tại nào ngoài chúng ta ngay tại đó cả, chẳng có thực thể nào luôn. Tại sao, hay cái gì?
@@ -45,11 +46,16 @@ Nhưng cơ bản là, nó biến mất. Chỉ còn tôi lại với những hụ
 
 > "
 
----
+* * *
+
 Lần trước, mình lầm tưởng manh mối này với một liên kết trong thực tế. Nhưng giờ mình nhận ra chuyện liên kết chỉ là một ảo ảnh, tâm trí cố gắng đặt một ý nghĩa nào đó cho những sự việc nên hoặc không nên diễn ra trong thực tại với những thứ mình đang tìm kiếm.
 
 Đừng cố gắng làm ra vẻ thanh cao, nói mấy chuyện cao siêu và tỏ ra mình khó hiểu. Không ai hiểu anh nói gì đâu!
+
 > Nhìn đời đơn giản thôi.
 
----
+![](/posts/assets/images/personal.png)
+
+* * *
+
 > Shen2H x Scorprien: from ashes
