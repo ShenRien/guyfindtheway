@@ -19,5 +19,4 @@ content:
       - { name: description, label: Description, type: string, options: {maxlength: 180}}
       - { name: date, label: Date, type: date}
       - { name: body, label: Body, type: rich-text}
-      - { name: tags, label: Tags, type: rich-text}
       - { name: image, label: Image, type: image}
