@@ -1,17 +1,15 @@
-name: Deploy 11ty to GitHub Pages
+name: Build 11ty Site
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
-    branches: ["main"]
+    branches: ['main']
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
-    outputs:
-      artifact-name: ${{ steps.set-artifact-name.outputs.name }}
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,41 +19,8 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Generate unique artifact name
-        id: set-artifact-name
-        run: |
-          UNIQUE_NAME="github-pages-$(date +%s)"
-          echo "name=$UNIQUE_NAME" >> $GITHUB_OUTPUT
-
       - name: Install dependencies
-        run: npm install
+        run: npm ci # Sử dụng 'npm ci' cho môi trường CI để đảm bảo cài đặt chính xác
 
       - name: Build site
         run: NODE_ENV=production npm run build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '_site/'
-          # name: ${{ steps.set-artifact-name.outputs.name }} # ĐÃ COMMENT DÒNG NÀY
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    
-    permissions:
-      pages: write
-      id-token: write
-    
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
