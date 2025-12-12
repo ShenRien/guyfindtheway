@@ -8,4 +8,5 @@ content:
     type: collection
     filename: "{primary}.md"
     view:
-      fields: [title, date]
+      fields: [ title, date ]
+      primary: title
