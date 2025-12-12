@@ -2,6 +2,7 @@
 title: Người làm thuê không cần phán xét (ask Akasha)
 description: Hai câu hỏi cho một câu chuyện, một là góc nhìn thực tế nhất là gì,
   và một là cảm giác nghẹn.
+date: 2025-12-11T18:59:00
 tags:
   - articles
   - tusixmode
