@@ -1,0 +1,3 @@
+media:
+  input: src/posts/assets/images
+  output: /posts/assets/images
