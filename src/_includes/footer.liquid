@@ -30,11 +30,58 @@
 <footer class="footer">
   <nav>
     <ul class="footer-links">
-    <li><a href="{{ '/' | url }}">Home</a></li>
+      <li><a href="{{ '/' | url }}">Home</a></li>
       <li><a href="{{ '/articles' | url }}">Triết học tinh thần</a></li>
       <li><a href="{{ '/tusixmode' | url }}">Tusix mode</a></li>
       <li><a href="{{ '/about' | url }}">About</a></li>
       <li><a href="{{ '/rss' | url }}">RSS</a></li>
     </ul>
   </nav>
+
+  <div style='text-align: center;'>
+    </br>
+    </br>
+    <p>Stopwatch</p>
+    <div id='display'>00:00:00:00:00</div>
+    <p>Thời gian đã trôi qua kể từ lúc bắt đầu!</p>
+  </div>
+
+  <style>
+    #display {
+      font-size: 1em;
+      font-weight: bold;
+      margin: 10px;
+      color: #e8e8e8;
+      font-family: monospace;
+    }
+  </style>
+
+  <script>
+    // Đảm bảo DOM đã sẵn sàng
+    document.addEventListener('DOMContentLoaded', function() {
+      // SET THỜI ĐIỂM BẮT ĐẦU Ở ĐÂY (năm, tháng, ngày, giờ, phút, giây)
+      // Lưu ý: Tháng trong JavaScript tính từ 0 (0 = Tháng 1, 1 = Tháng 2, ...)
+      const startDate = new Date(2025, 11, 12, 12, 30, 0); // 12/12/2025 12:30:00
+
+      function updateStopwatch() {
+        const now = new Date();
+        const elapsed = now - startDate; // milliseconds
+
+        // Tính toán ngày, giờ, phút, giây, mili giây
+        const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+        const milliseconds = Math.floor((elapsed % 1000) / 10); // Lấy 2 chữ số (0-99)
+
+        // Hiển thị định dạng DD:HH:MM:SS:MS
+        document.getElementById('display').textContent = 
+          `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}:${String(milliseconds).padStart(2, '0')}`;
+      }
+
+      // Cập nhật mỗi 10ms để hiển thị mượt mà và giảm tải
+      setInterval(updateStopwatch, 10);
+      updateStopwatch(); // Chạy ngay lần đầu
+    });
+  </script>
 </footer>
