@@ -3,7 +3,7 @@ media:
   output: /posts/assets/images
 content:
   - name: posts
-    label: Tusixmode
+    label: Posts
     path: src/posts
     type: collection
     filename: "{primary}.md"
