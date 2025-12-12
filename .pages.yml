@@ -21,3 +21,7 @@ content:
       - { name: tags, label: Tags, type: string, list: {collapsible: true, min: 1, max: 5, default: [new]}}
       - { name: body, label: Body, type: rich-text}
       - { name: image, label: Image, type: image}
+  - name: tusixmode
+    label: Tusixmode
+    path: src/posts/tusixmode
+    type: collection
