@@ -16,3 +16,6 @@ content:
         order: asc
     fields:
       - { name: title, label: Title, type: string, required: true}
+      - { name: description, label: Description, type: string, options: {maxlength: 180}}
+      - { name: date, label: Date, type: number}
+      - { name: body, label: Body, type: rich-text}
