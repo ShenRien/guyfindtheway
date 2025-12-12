@@ -6,3 +6,8 @@ content:
     label: Posts
     path: src/posts
     type: collection
+content:
+  - name: page
+    label: all page setting
+    path: /
+    type: setting
