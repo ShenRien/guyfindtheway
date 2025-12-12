@@ -4,10 +4,8 @@ media:
 content:
   - name: posts
     label: Tusixmode
-    path: src/posts/tusixmode
+    path: src/posts
     type: collection
     filename: "{primary}.md"
-  - name: posts
-    label: Triết học tinh thần
-    path: src/posts/article
-    type: collection
+    view:
+      fields: [title, date]
