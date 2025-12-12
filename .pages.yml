@@ -10,3 +10,9 @@ content:
     view:
       fields: [ title, date ]
       primary: title
+      sort: [ date, title ]
+      default:
+        sort: date
+        order: asc
+    fields:
+      - { name: title, label: Title, type: string, required: true}
