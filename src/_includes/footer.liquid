@@ -43,6 +43,8 @@
     </br>
     <p>Stopwatch</p>
     <div id='display'>00:00:00:00:00</div>
+    <p> reset 1 </p>
+    <div id='display1'>00:00:00:00:00</div>
     <p>Thời gian đã trôi qua kể từ khi nó bắt đầu!</p>
   </div>
 
@@ -51,37 +53,149 @@
       font-size: 1em;
       font-weight: bold;
       margin: 10px;
-      color: #e8e8e8;
+      color: var(--color-primary);
+      font-family: monospace;
+    }
+    #display1 {
+      font-size: 1em;
+      font-weight: bold;
+      margin: 10px;
+      color: var(--color-primary);
       font-family: monospace;
     }
   </style>
 
   <script>
-    // Đảm bảo DOM đã sẵn sàng
-    document.addEventListener('DOMContentLoaded', function() {
-      // SET THỜI ĐIỂM BẮT ĐẦU Ở ĐÂY (năm, tháng, ngày, giờ, phút, giây)
-      // Lưu ý: Tháng trong JavaScript tính từ 0 (0 = Tháng 1, 1 = Tháng 2, ...)
-      const startDate = new Date(2025, 11, 12, 12, 30, 0); // 12/12/2025 12:30:00
+  document.addEventListener('DOMContentLoaded', function() {
+    // ==================== CẤU HÌNH ====================
+    const CONFIG = {
+        // Định dạng hiển thị: [tên, ngày bắt đầu, padding days]
+        timers: [
+            { id: 'display', date: new Date(2025, 11, 12, 12, 30, 0), padDays: 3 }, // 12/12/2025 12:30:00
+            { id: 'display1', date: new Date(2025, 11, 14, 17, 0, 0), padDays: 3 }  // 14/12/2025 17:00:00
+        ],
+        updateInterval: 10, // ms (100 lần/giây - đủ mượt)
+        useAnimationFrame: true, // Sử dụng requestAnimationFrame nếu trình duyệt hỗ trợ
+        pauseWhenHidden: true // Tự động dừng khi tab không active
+    };
 
-      function updateStopwatch() {
-        const now = new Date();
-        const elapsed = now - startDate; // milliseconds
+    // ==================== BIẾN TOÀN CỤC ====================
+    const MS_PER_SECOND = 1000;
+    const MS_PER_MINUTE = MS_PER_SECOND * 60;
+    const MS_PER_HOUR = MS_PER_MINUTE * 60;
+    const MS_PER_DAY = MS_PER_HOUR * 24;
 
-        // Tính toán ngày, giờ, phút, giây, mili giây
-        const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
-        const milliseconds = Math.floor((elapsed % 1000) / 10); // Lấy 2 chữ số (0-99)
+    let animationId = null;
+    let lastUpdateTime = 0;
+    const displayElements = {};
 
-        // Hiển thị định dạng DD:HH:MM:SS:MS
-        document.getElementById('display').textContent = 
-          `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}:${String(milliseconds).padStart(2, '0')}`;
-      }
+    // ==================== HÀM TIỆN ÍCH ====================
+    // Format số với padding (nhanh hơn String().padStart)
+    function padNumber(num, length) {
+        return (num < 0 ? '00' : num.toString()).padStart(length, '0');
+    }
 
-      // Cập nhật mỗi 10ms để hiển thị mượt mà và giảm tải
-      setInterval(updateStopwatch, 10);
-      updateStopwatch(); // Chạy ngay lần đầu
-    });
+    // Tính thời gian từ mili giây -> [days, hours, minutes, seconds, centiseconds]
+    function calculateTimeComponents(elapsedMs) {
+        const days = (elapsedMs / MS_PER_DAY) | 0;
+        const hours = ((elapsedMs % MS_PER_DAY) / MS_PER_HOUR) | 0;
+        const minutes = ((elapsedMs % MS_PER_HOUR) / MS_PER_MINUTE) | 0;
+        const seconds = ((elapsedMs % MS_PER_MINUTE) / MS_PER_SECOND) | 0;
+        const centiseconds = ((elapsedMs % MS_PER_SECOND) / 10) | 0; // 1/100 giây
+        
+        return [days, hours, minutes, seconds, centiseconds];
+    }
+
+    // Format chuỗi thời gian
+    function formatTime(components, padDays = 3) {
+        const [days, hours, mins, secs, cs] = components;
+        return `${padNumber(days, padDays)}:${padNumber(hours, 2)}:${padNumber(mins, 2)}:${padNumber(secs, 2)}:${padNumber(cs, 2)}`;
+    }
+
+    // ==================== HÀM CHÍNH ====================
+    function updateAllTimers(timestamp) {
+        // Giới hạn tần suất cập nhật (performance throttle)
+        if (CONFIG.updateInterval > 0 && timestamp - lastUpdateTime < CONFIG.updateInterval) {
+            if (CONFIG.useAnimationFrame) {
+                animationId = requestAnimationFrame(updateAllTimers);
+            }
+            return;
+        }
+        lastUpdateTime = timestamp;
+        
+        const now = Date.now(); // Nhanh hơn new Date()
+        
+        // Cập nhật tất cả timer cùng lúc (tránh multiple DOM queries)
+        CONFIG.timers.forEach(timer => {
+            if (displayElements[timer.id]) {
+                const elapsed = now - timer.date.getTime();
+                const timeComponents = calculateTimeComponents(elapsed);
+                displayElements[timer.id].textContent = formatTime(timeComponents, timer.padDays);
+            }
+        });
+
+        // Lên lịch cập nhật tiếp theo
+        if (CONFIG.useAnimationFrame) {
+            animationId = requestAnimationFrame(updateAllTimers);
+        }
+    }
+
+    function startTimers() {
+        // Cache tất cả DOM elements một lần duy nhất
+        CONFIG.timers.forEach(timer => {
+            displayElements[timer.id] = document.getElementById(timer.id);
+        });
+
+        // Chọn phương thức cập nhật tối ưu
+        if (CONFIG.useAnimationFrame && 'requestAnimationFrame' in window) {
+            animationId = requestAnimationFrame(updateAllTimers);
+        } else {
+            // Fallback cho trình duyệt cũ
+            updateAllTimers(0);
+            setInterval(() => updateAllTimers(Date.now()), CONFIG.updateInterval);
+        }
+    }
+
+    function stopTimers() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+    }
+
+    // ==================== XỬ LÝ SỰ KIỆN ====================
+    // Tự động dừng khi tab không active (tiết kiệm pin mobile)
+    if (CONFIG.pauseWhenHidden && 'visibilityState' in document) {
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopTimers();
+            } else {
+                startTimers();
+            }
+        });
+    }
+
+    // Xử lý sự kiện trước khi trang đóng
+    window.addEventListener('beforeunload', stopTimers);
+    window.addEventListener('pagehide', stopTimers);
+
+    // ==================== KHỞI CHẠY ====================
+    // Kiểm tra xem các phần tử hiển thị có tồn tại không
+    const allElementsExist = CONFIG.timers.every(timer => document.getElementById(timer.id));
+    
+    if (allElementsExist) {
+        startTimers();
+    } else {
+        console.warn('Một số phần tử đồng hồ không tìm thấy. Kiểm tra lại ID:', 
+            CONFIG.timers.filter(timer => !document.getElementById(timer.id)).map(t => t.id));
+        
+        // Vẫn chạy với các phần tử tồn tại
+        const existingTimers = CONFIG.timers.filter(timer => document.getElementById(timer.id));
+        if (existingTimers.length > 0) {
+            CONFIG.timers = existingTimers;
+            startTimers();
+        }
+    }
+});
   </script>
 </footer>
