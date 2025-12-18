@@ -45,46 +45,46 @@
     <div id='display'>00:00:00:00:00</div>
     <p> reset 1 </p>
     <div id='display1'>00:00:00:00:00</div>
-<!-- Addtion maats duwx lieeuj
-    <p> Mất dữ liệu </p>
-    <div id='display2'>00:00:00:00:00</div>
--->
+<!-- Bạn có thể comment hoặc bỏ comment phần tử display2 mà không ảnh hưởng -->
+    <!-- <p> Mất dữ liệu </p>
+    <div id='display2'>00:00:00:00:00</div> -->
     <p>Thời gian đã trôi qua kể từ khi nó bắt đầu!</p>
-  </div>
+</div>
 
-  <style>
+<style>
     #display {
-      font-size: 1em;
-      font-weight: bold;
-      margin: 10px;
-      color: var(--color-primary);
-      font-family: monospace;
+        font-size: 1em;
+        font-weight: bold;
+        margin: 10px;
+        color: var(--color-primary);
+        font-family: monospace;
     }
     #display1 {
-      font-size: 1em;
-      font-weight: bold;
-      margin: 10px;
-      color: var(--color-primary);
-      font-family: monospace;
+        font-size: 1em;
+        font-weight: bold;
+        margin: 10px;
+        color: var(--color-primary);
+        font-family: monospace;
     }
     #display2 {
-      font-size: 1em;
-      font-weight: bold;
-      margin: 10px;
-      color: var(--color-primary);
-      font-family: monospace;
+        font-size: 1em;
+        font-weight: bold;
+        margin: 10px;
+        color: var(--color-primary);
+        font-family: monospace;
     }
-  </style>
+</style>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
+<script>
+document.addEventListener('DOMContentLoaded', function() {
     // ==================== CẤU HÌNH ====================
     const CONFIG = {
         // Định dạng hiển thị: [tên, ngày bắt đầu, padding days]
         timers: [
             { id: 'display', date: new Date(2025, 11, 12, 12, 30, 0), padDays: 3 }, // 12/12/2025 12:30:00
-            { id: 'display1', date: new Date(2025, 11, 14, 19, 26, 0), padDays: 3 }  // 14/12/2025 19:26:00
-            //{ id: 'display2', date: new Date(2025, 11, 18, 01, 00, 0), padDays: 3 }  // 18/12/2025 10:00:00
+            { id: 'display1', date: new Date(2025, 11, 14, 19, 26, 0), padDays: 3 }, // 14/12/2025 19:26:00
+            { id: 'display2', date: new Date(2025, 11, 18, 01, 00, 0), padDays: 3 }  // 18/12/2025 01:00:00
+            // Bạn có thể thêm timer mới ở đây, ngay cả khi phần tử HTML chưa tồn tại
         ],
         updateInterval: 100, // ms (100 lần/giây - đủ mượt)
         useAnimationFrame: true, // Sử dụng requestAnimationFrame nếu trình duyệt hỗ trợ
@@ -109,11 +109,11 @@
 
     // Tính thời gian từ mili giây -> [days, hours, minutes, seconds, centiseconds]
     function calculateTimeComponents(elapsedMs) {
-        const days = (elapsedMs / MS_PER_DAY) | 0;
-        const hours = ((elapsedMs % MS_PER_DAY) / MS_PER_HOUR) | 0;
-        const minutes = ((elapsedMs % MS_PER_HOUR) / MS_PER_MINUTE) | 0;
-        const seconds = ((elapsedMs % MS_PER_MINUTE) / MS_PER_SECOND) | 0;
-        const centiseconds = ((elapsedMs % MS_PER_SECOND) / 10) | 0; // 1/100 giây
+        const days = Math.floor(elapsedMs / MS_PER_DAY);
+        const hours = Math.floor((elapsedMs % MS_PER_DAY) / MS_PER_HOUR);
+        const minutes = Math.floor((elapsedMs % MS_PER_HOUR) / MS_PER_MINUTE);
+        const seconds = Math.floor((elapsedMs % MS_PER_MINUTE) / MS_PER_SECOND);
+        const centiseconds = Math.floor((elapsedMs % MS_PER_SECOND) / 10); // 1/100 giây
         
         return [days, hours, minutes, seconds, centiseconds];
     }
@@ -137,12 +137,18 @@
         
         const now = Date.now(); // Nhanh hơn new Date()
         
-        // Cập nhật tất cả timer cùng lúc (tránh multiple DOM queries)
+        // Cập nhật tất cả timer có phần tử DOM tồn tại
         CONFIG.timers.forEach(timer => {
-            if (displayElements[timer.id]) {
+            const element = displayElements[timer.id];
+            if (element) {
                 const elapsed = now - timer.date.getTime();
+                // Kiểm tra nếu ngày bắt đầu ở tương lai
+                if (elapsed < 0) {
+                    element.textContent = formatTime([0, 0, 0, 0, 0], timer.padDays);
+                    return;
+                }
                 const timeComponents = calculateTimeComponents(elapsed);
-                displayElements[timer.id].textContent = formatTime(timeComponents, timer.padDays);
+                element.textContent = formatTime(timeComponents, timer.padDays);
             }
         });
 
@@ -153,10 +159,21 @@
     }
 
     function startTimers() {
-        // Cache tất cả DOM elements một lần duy nhất
+        // Cache tất cả DOM elements chỉ nếu chúng tồn tại
         CONFIG.timers.forEach(timer => {
-            displayElements[timer.id] = document.getElementById(timer.id);
+            const element = document.getElementById(timer.id);
+            if (element) {
+                displayElements[timer.id] = element;
+            } else {
+                console.warn(`Phần tử #${timer.id} không tồn tại trong DOM. Timer này sẽ bị bỏ qua.`);
+            }
         });
+
+        // Chỉ chạy nếu có ít nhất một timer hợp lệ
+        if (Object.keys(displayElements).length === 0) {
+            console.error('Không tìm thấy phần tử timer nào để hiển thị!');
+            return;
+        }
 
         // Chọn phương thức cập nhật tối ưu
         if (CONFIG.useAnimationFrame && 'requestAnimationFrame' in window) {
@@ -192,22 +209,7 @@
     window.addEventListener('pagehide', stopTimers);
 
     // ==================== KHỞI CHẠY ====================
-    // Kiểm tra xem các phần tử hiển thị có tồn tại không
-    const allElementsExist = CONFIG.timers.every(timer => document.getElementById(timer.id));
-    
-    if (allElementsExist) {
-        startTimers();
-    } else {
-        console.warn('Một số phần tử đồng hồ không tìm thấy. Kiểm tra lại ID:', 
-            CONFIG.timers.filter(timer => !document.getElementById(timer.id)).map(t => t.id));
-        
-        // Vẫn chạy với các phần tử tồn tại
-        const existingTimers = CONFIG.timers.filter(timer => document.getElementById(timer.id));
-        if (existingTimers.length > 0) {
-            CONFIG.timers = existingTimers;
-            startTimers();
-        }
-    }
+    startTimers();
 });
-  </script>
+</script>
 </footer>
