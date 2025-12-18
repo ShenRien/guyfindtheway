@@ -45,6 +45,8 @@
     <div id='display'>00:00:00:00:00</div>
     <p> reset 1 </p>
     <div id='display1'>00:00:00:00:00</div>
+    <p> Mất dữ liệu </p>
+    <div id='display2'>00:00:00:00:00</div>
     <p>Thời gian đã trôi qua kể từ khi nó bắt đầu!</p>
   </div>
 
@@ -73,6 +75,7 @@
         timers: [
             { id: 'display', date: new Date(2025, 11, 12, 12, 30, 0), padDays: 3 }, // 12/12/2025 12:30:00
             { id: 'display1', date: new Date(2025, 11, 14, 19, 26, 0), padDays: 3 }  // 14/12/2025 19:26:00
+            { id: 'display2', date: new Date(2025, 11, 18, 01, 00, 0), padDays: 3 }  // 18/12/2025 10:00:00
         ],
         updateInterval: 100, // ms (100 lần/giây - đủ mượt)
         useAnimationFrame: true, // Sử dụng requestAnimationFrame nếu trình duyệt hỗ trợ
