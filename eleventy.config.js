@@ -22,7 +22,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("./src/posts/assets/");
-
+  eleventyConfig.addPassthroughCopy("assets/fonts/");
   eleventyConfig.addPlugin(codeStyleHooks, {
     lineNumbers: false,
   });

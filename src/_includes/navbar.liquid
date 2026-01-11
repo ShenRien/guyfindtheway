@@ -108,7 +108,11 @@
                alt="Starfish icon"
                width="80" 
                height="80">
-          <a href="{{ '/' | url }}">{{ site.shortTitle }}</a>
+          <a href="{{ '/' | url }}">{{ site.shortTitle }}
+            {% if site.hasPill  %}
+              <span class="emoji-fix">💊</span>
+            {% endif %}
+          </a>
           <div class="toggler">{% include "dark-toggler.liquid" %}</div>
         </div>
       </li>

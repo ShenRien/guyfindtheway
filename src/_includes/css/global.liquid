@@ -4,6 +4,7 @@
     margin: 0;
     line-height: calc(1em + 0.75rem);
   }
+  
   html {
     --color-background: #fffcf0;
     --color-background-shade: #fbf3d9;
@@ -14,9 +15,11 @@
     --color-post: #f37d5c10;
     --color-post2: #f4d2c920;
 
-    --font-family: -apple-system, BlinkMacSystemFont, "Inter", "IBM Plex Sans",
+    /* --font-family: -apple-system, BlinkMacSystemFont, "Inter", "IBM Plex Sans",
       Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
       Segoe UI Symbol;
+    */
+    
 
     --container-max-size: 75ch;
     --container-padding-sides: var(--space-2);
@@ -32,10 +35,10 @@
     --space-9: 5rem;
     --space-10: 6rem;
 
-    --font-size-xs: clamp(0.8rem, 0.12vw + 0.8rem, 1rem);
-    --font-size-base: clamp(0.9rem, 0.16vw + 0.9rem, 1.25rem);
-    --font-size-lg: clamp(1.2rem, 0.12vw + 1.2rem, 1.6rem);
-    --font-size-xl: clamp(1.6rem, 0.14vw + 1.6rem, 2rem);
+    --font-size-xs: clamp(0.8rem, 0.85vw + 0.8rem, 1rem); /* chú thích nhỏ */
+    --font-size-base: clamp(0.9rem, 0.8vw + 0.9rem, 1.45rem); /* văn bản chính */
+    --font-size-lg: clamp(1.2rem, 0.8vw + 1.2rem, 1.75rem); /* tiêu đề nhỏ */
+    --font-size-xl: clamp(1.6rem, 0.8vw + 1.6rem, 2.5rem); /* tiêu đề lớn */
   }
   [data-theme="dark"] {
     --color-background: #100f0f;
@@ -62,7 +65,7 @@
     font-size: var(--font-size-base);
   }
   body {
-    font-family: var(--font-family);
+    font-family: var(--font-family) !important;
     color: var(--color-text);
     background-color: var(--color-background);
     font-size: 1rem;
@@ -134,5 +137,34 @@
     width: 1px;
   }
 
+
+
+:root {
+    --font-family: "CharisSIL_Local", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+html{
+    font-family: var(--font-family), "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      
+}
+
+@font-face {
+  font-family: "CharisSIL_Local"; 
+  src: url("{{ '/assets/fonts/CharisSIL-Regular.ttf' | url }}") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.article {
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.emoji-fix {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "IBM Plex Sans",
+      Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+      Segoe UI Symbol !important; /* Buộc trình duyệt thoát khỏi CharisSIL */
+}
 
 </style>
