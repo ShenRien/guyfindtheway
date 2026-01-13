@@ -13,7 +13,7 @@ Có lẽ như từ lúc quay qua đọc Phạm Công Thiện là mình đã bắ
 
 > Có một chuyện về một bài hát mà nhạc sĩ Trịnh Công Sơn viết được lấy cảm hứng từ một bài thơ của Bùi Giáng, bài thơ là bài "Mắt buồn". Hai câu cuối của bài thơ như sau:
 > 
-> > *"Bây giờ riêng đối diện tôi*
+> > *"Bây giờ riêng đối diện tôi*\
 > > *Còn hai con mắt, khóc người một con"*
 > 
 > Và hai câu đầu trong bài hát "Con mắt còn lại" của nhạc sĩ Trịnh Công Sơn là:
