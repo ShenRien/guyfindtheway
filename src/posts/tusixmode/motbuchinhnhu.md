@@ -26,7 +26,7 @@ Có lẽ như từ lúc quay qua đọc Phạm Công Thiện là mình đã bắ
 > 
 > Không dám bàn luận nhiều, việc chỉ nhắc đến những cái tên trong bài viết như thế này đã là một điều gì đó khá lớn lao đối với mình rồi.
 
-Ông nói, thời đại này đã không còn những thiên tài như William Saroyan nữa, chỉ còn mỗi Bùi Giáng. Mà Bùi Giáng, kiểu người như thế nào? Một đời sống ngập tràn khói thuốc, đầy tình yêu mà mỗi người một kiểu và suy nghĩ của ông chỉ quanh quẩn quanh các nàng thơ mà ông từng gặp trong cuộc đời... Công bằng mà nói, mình nghĩ Bùi Giáng là người bị "gày bẫy" bởi những người mà ông đã yêu thương thôi. Hẳn là có những người không giỏi ở mức khiến người khác ngưỡng mộ, mà giỏi đến mức khiến người khác phải ganh tỵ. Một bi kịch kinh điển của cái đẹp.
+Ông nói, thời đại này đã không còn những thiên tài như William Saroyan nữa, chỉ còn mỗi Bùi Giáng. Mà Bùi Giáng, kiểu người như thế nào? Một đời sống ngập tràn khói thuốc, đầy tình yêu mà mỗi người một kiểu và suy nghĩ của ông chỉ quanh quẩn quanh các nàng thơ mà ông từng gặp trong cuộc đời... Công bằng mà nói, mình nghĩ Bùi Giáng là người bị "gài bẫy" bởi những người mà ông đã yêu thương thôi. Hẳn là có những người không giỏi ở mức khiến người khác ngưỡng mộ, mà giỏi đến mức khiến người khác phải ganh tỵ. Một bi kịch kinh điển của cái đẹp.
 
 Ờ mà Phạm Công Thiện, thiên tài triết học năm 20 tuổi viết một cuốn sách có thể nói là làm rung chuyển giới triết học và thần học thời đó. Năm 30 tuổi lại đốt hết tất cả những quyển sách năm 20 tuổi đi. Người này lại không làm mình có nhiều chú ý bằng Bùi Giáng.. Xin được kể về Bùi Giáng sau vậy.
 
