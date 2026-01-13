@@ -1,5 +1,5 @@
 ---
-image: /assets/images/motbuchinhnhu.png
+image: /assets/images/asfmotbuchinhnhu.png
 title: Một bức hình như (gita 1)
 description: Đôi khi mình thấy đặt những cái tên thực hay cho một bài viết nào đó mình không chắc có thể có viết đủ nội dung xứng đáng với tựa đề không?
 date: 2026-01-13T19:11:00

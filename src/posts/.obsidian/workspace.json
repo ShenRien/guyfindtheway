@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.51103591918945
+    "width": 419.5
   },
   "right": {
     "id": "559ec01162f92c42",
@@ -171,11 +171,14 @@
   },
   "active": "371d2fdbf0a696b7",
   "lastOpenFiles": [
+    "tusixmode/startingfromcoixaygio.md",
+    "assets/images/asfmotbuchinhnhu.png",
+    "assets/images/one.png",
+    "assets/images/nguoilamthuekhongcanphanxet.png",
     "tusixmode/nguoilamthuekhongcanphanxet.md",
     "tusixmode/motbuchinhnhu.md",
     "tusixmode/kimchinam.md",
     "tusixmode/Bạc Liêu luận ký I.md",
-    "assets/images/nguoilamthuekhongcanphanxet.png",
     "about.md",
     "tusixmode/Traisucvat.md",
     "tusixmode/kyvongtoichanlyonewm.md",
@@ -186,7 +189,6 @@
     "assets/images/vechuongdautien3f.png",
     "articles/vechuongdautien2-bhagavadgita.md",
     "assets/images/vechuongdautien3.png",
-    "assets/images/one.png",
     "assets/images/bhagavadgita.png",
     "articles/vebatroaothuatcuatamtri-dichnieztsche.md",
     "articles/Bốn đáy vực đầu tiên - Nietzsche (Trích dẫn).md",
@@ -194,9 +196,7 @@
     "tusixmode/Personal.md",
     "assets/images/personal.png",
     "tusixmode/nguoikhonannoinuavoi.md",
-    "tusixmode/startingfromcoixaygio.md",
     "assets/images/coixaygio.png",
-    "assets/images/default-image.png",
     "tusixmode/The river.md",
     "tusixmode/Tâm linh vấn ký.md",
     "tusixmode/Quân đội, lính đánh thuê và đồng minh.md",
@@ -210,7 +210,6 @@
     "articles/bài viết testing template.md",
     "template/Untitled.md",
     "template",
-    "sample-article.md",
     "Templates"
   ]
 }
