@@ -12,9 +12,12 @@ Có lẽ như từ lúc quay qua đọc Phạm Công Thiện là mình đã bắ
 Ông có recommend Bùi Giáng, một nhà thơ và cũng là một người bạn của nhạc sĩ Trịnh Công Sơn.
 
 > Có một chuyện về một bài hát mà nhạc sĩ Trịnh Công Sơn viết được lấy cảm hứng từ một bài thơ của Bùi Giáng, bài thơ là bài "Mắt buồn". Hai câu cuối của bài thơ như sau:
+> 
 > > *"Bây giờ riêng đối diện tôi*
 > > *Còn hai con mắt, khóc người một con"*
+> 
 > Và hai câu đầu trong bài hát "Con mắt còn lại" của nhạc sĩ Trịnh Công Sơn là:
+> 
 > > *"Còn hai con mắt khóc người một con, còn hai con mắt một con khóc người. Con mắt còn lại nhìn cuộc đời tôi, nhìn tôi lên cao nhìn tôi xuống thấp..."*
 > 
 > Có lẽ mình cố tình đặt thành 2 câu để tạo cảm giác đối nhau. Fact này mình vô tình đọc được bài Mắt Buồn của ông nên mình phát hiện.
