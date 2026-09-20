@@ -26,5 +26,14 @@
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.4",
     "markdown-it-attrs": "^4.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShenRien/guyfindtheway.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ShenRien/guyfindtheway/issues"
+  },
+  "homepage": "https://github.com/ShenRien/guyfindtheway#readme"
 }

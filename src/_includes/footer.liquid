@@ -1,5 +1,6 @@
 <style>
   .footer {
+  min-width: auto;
     max-width: var(--container-max-size);
     padding: var(--space-7) var(--container-padding-sides);
     margin: var(--space-6) auto 8rem auto;
@@ -40,12 +41,10 @@
 </br>
 </br>
   <div style='text-align: center; dislplay: flex; align: center; padding-left: 20%;; padding-right: 20%;'>
-<div id='cockpit' style='text-align: center;'>
     <p>Stopwatch</p>
     <div id='display' class='calculator'>00:00:00:00:00</div>
     <p> reset 1 </p>
     <div id='display1' class='calculator'>00:00:00:00:00</div>
-<!-- Bạn có thể comment hoặc bỏ comment phần tử display2 mà không ảnh hưởng -->
     <p> Mất dữ liệu </p>
     <div id='display2' class='calculator'>00:00:00:00:00</div>
     <p>Thời gian đã trôi qua kể từ khi nó bắt đầu!</p>
@@ -54,36 +53,42 @@
 <style>
 	.calculator {
     	border: 1px solid white;
-        padding: 5px;
-        border-radius: 5px;
-    }
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 0.1rem;
+        padding-top: 0.03rem;
+        border-radius: 0.5rem;
+        display: inline-flex;
+        background-color: #393939;
+}
     #display {
         font-size: 1em;
         font-weight: bold;
         margin: 10px;
-        color: var(--color-primary);
+        color: var(--color-calculator);
         font-family: monospace;
     }
     #display1 {
         font-size: 1em;
         font-weight: bold;
         margin: 10px;
-        color: var(--color-primary);
+        color: var(--color-calculator);
         font-family: monospace;
     }
     #display2 {
         font-size: 1em;
         font-weight: bold;
         margin: 10px;
-        color: var(--color-primary);
+        color: var(--color-calculator);
         font-family: monospace;
     }
     #cockpit {
-    	background-color: #bfbfbf;
+    	background-color: #ccc00010;
+        width: auto;
         padding-bottom: 5px;
         border-radius: 10px;
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: auto;
+        padding-right: auto;
     }
 </style>
 <script>
@@ -125,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const minutes = Math.floor((elapsedMs % MS_PER_HOUR) / MS_PER_MINUTE);
         const seconds = Math.floor((elapsedMs % MS_PER_MINUTE) / MS_PER_SECOND);
         const centiseconds = Math.floor((elapsedMs % MS_PER_SECOND) / 10); // 1/100 giây
-        
+
         return [days, hours, minutes, seconds, centiseconds];
     }
 
@@ -145,9 +150,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         lastUpdateTime = timestamp;
-        
+
         const now = Date.now(); // Nhanh hơn new Date()
-        
+
         // Cập nhật tất cả timer có phần tử DOM tồn tại
         CONFIG.timers.forEach(timer => {
             const element = displayElements[timer.id];

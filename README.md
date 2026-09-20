@@ -17,7 +17,17 @@ Blog sử dụng mã nguồn theme Nulite (từ file /README-Author.md)
 > - npm install --save markdown-it-attrs (target _blank (mở liên kết qua trang mới bằng hậu tố  [your text](http://yourlink.example/){target='_blank'} ))
 
 ##### Cách dùng
-- Tải trực tiếp mã nguồn từ đây
+- Tải trực tiếp mã nguồn từ đây (gitclone)
+		
+	1. Bản production được build trong thư mục ```_site``` bằng lệnh:	
+	```
+	npx @11ty/eleventy
+	```
+	Hoặc build và host trong local cho chế độ phát triển bằng lệnh:
+	```
+	npx @11ty/eleventy --serve
+	```
+
 - Thư mục scr/posts/ lưu trữ tất cả các bài viết 
 - Thay thế một số placeholder từ các file .liquid
 - Thay đổi favion thành ảnh riêng nếu muốn
