@@ -4,11 +4,9 @@ description: Ngày mới của một hôm nào đó.
 date: 2026-10-04T07:47:00
 tags:
   - think
-image: /posts/assets/images/2026-02-04-002606_hyprshot.png
+image: /assets/images/2026-02-04-002606_hyprshot-1.png
 ---
 # Morning come
-
-
 
 Nếu như không dùng được các công nghệ mới như Emacs thì cứ dùng tạm những thứ chắp nối mà đơn giản hơn một chút. Cho tới khi đủ mạnh để dùng được nhiều hơn.
 
