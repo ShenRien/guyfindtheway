@@ -16,7 +16,7 @@ Mình thật sự mệt mỏi với những thứ diễn ra xung quanh. Có lẽ
 
 
 
-Sẽ có một ngày nào đó trong cuộc sống mà mọi chuyện xung quanh tự động sắp xếp đơn giản hơn những điều tiết trong hiện tại. Cơn điên của mình và lũ người còn quá lớn và quá trống trải để mọi thứ thật sự được sắp xếp một cách có trật tự. Mình cũng cơ bản là hèn kém và tự vao và diên khùng hơn tất cả những chứng kiến trước mắt mà thôi.
+Sẽ có một ngày nào đó trong cuộc sống mà mọi chuyện xung quanh tự động sắp xếp đơn giản hơn những điều tiết trong hiện tại. Cơn điên của mình và lũ người còn quá lớn và quá trống trải để mọi thứ thật sự được sắp xếp một cách có trật tự. Mình cũng cơ bản là hèn kém và tự cao và điên khùng hơn tất cả những chứng kiến trước mắt mà thôi.
 
 
 
