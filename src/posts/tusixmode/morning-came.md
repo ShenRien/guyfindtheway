@@ -4,7 +4,7 @@ description: Ngày mới của một hôm nào đó.
 date: 2026-10-04T07:47:00
 tags:
   - think
-image: /assets/images/2026-02-04-002606_hyprshot-1.png
+image: /assets/images/2026-02-04-002606_hyprshot-2.png
 ---
 # Morning come
 
